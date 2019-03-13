@@ -1,0 +1,81 @@
+diff --git a/dlls/mfplat/tests/mfplat.c b/dlls/mfplat/tests/mfplat.c
+index aa8029c98d..2484e6d1b1 100644
+--- a/dlls/mfplat/tests/mfplat.c
++++ b/dlls/mfplat/tests/mfplat.c
+@@ -1841,12 +1841,76 @@ static void test_MFInvokeCallback(void)
+     ok(hr == S_OK, "Failed to shut down, hr %#x.\n", hr);
+ }
+ 
++#include <stdio.h>
++struct guid_def
++{
++    const GUID *guid;
++    const char *name;
++};
++
++static int guid_def_compare(const void *a, const void* b)
++{
++     const struct guid_def *guid1 = a, *guid2 = b;
++     return memcmp(guid1->guid, guid2->guid, sizeof(*guid1->guid));
++}
++
++static void test_guid_lookup(void)
++{
++    unsigned int i;
++    struct guid_def guid_defs[] =
++    {
++#define X(g) { &(g), #g }
++        X(MF_MT_FRAME_RATE),
++        X(MF_MT_AVG_BITRATE),
++        X(MF_MT_FRAME_SIZE),
++        X(MF_MT_INTERLACE_MODE),
++        X(MF_MT_FRAME_RATE_RANGE_MAX),
++        X(MF_MT_MAJOR_TYPE),
++        X(MF_MT_PIXEL_ASPECT_RATIO),
++        X(MF_MT_SUBTYPE),
++        X(MF_MT_ALL_SAMPLES_INDEPENDENT),
++        X(MF_MT_USER_DATA),
++        X(MF_MT_FRAME_RATE_RANGE_MIN),
++
++        X(MF_BYTESTREAM_ORIGIN_NAME),
++        X(MF_BYTESTREAM_CONTENT_TYPE),
++        X(MF_BYTESTREAM_DURATION),
++        X(MF_BYTESTREAM_LAST_MODIFIED_TIME),
++        X(MF_BYTESTREAM_IFO_FILE_URI),
++        X(MF_BYTESTREAM_DLNA_PROFILE_ID),
++
++        X(MF_SINK_WRITER_ASYNC_CALLBACK),
++        X(MF_SINK_WRITER_DISABLE_THROTTLING),
++        X(MF_SINK_WRITER_D3D_MANAGER),
++        X(MF_SINK_WRITER_ENCODER_CONFIG),
++
++        X(MF_READWRITE_DISABLE_CONVERTERS),
++        X(MF_READWRITE_ENABLE_HARDWARE_TRANSFORMS),
++        X(MF_READWRITE_MMCSS_CLASS),
++        X(MF_READWRITE_MMCSS_PRIORITY),
++        X(MF_READWRITE_MMCSS_CLASS_AUDIO),
++        X(MF_READWRITE_MMCSS_PRIORITY_AUDIO),
++        X(MF_READWRITE_D3D_OPTIONAL),
++#undef X
++    };
++
++    qsort(guid_defs, ARRAY_SIZE(guid_defs), sizeof(struct guid_def), guid_def_compare);
++
++    printf("#define X(g) { &(g), #g }\n");
++    for (i = 0; i < ARRAY_SIZE(guid_defs); ++i)
++    {
++        printf("        X(%s),\n", guid_defs[i].name);
++    }
++    printf("#undef X\n");
++}
++
+ START_TEST(mfplat)
+ {
+     CoInitialize(NULL);
+ 
+     init_functions();
+ 
++    test_guid_lookup();
+     test_startup();
+     test_register();
+     test_media_type();
