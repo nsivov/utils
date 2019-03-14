@@ -1,8 +1,8 @@
 diff --git a/dlls/mfplat/tests/mfplat.c b/dlls/mfplat/tests/mfplat.c
-index aa8029c98d..2484e6d1b1 100644
+index a999b9bbe9..0bdf621417 100644
 --- a/dlls/mfplat/tests/mfplat.c
 +++ b/dlls/mfplat/tests/mfplat.c
-@@ -1841,12 +1841,76 @@ static void test_MFInvokeCallback(void)
+@@ -2042,12 +2042,96 @@ static void test_MFInvokeCallback(void)
      ok(hr == S_OK, "Failed to shut down, hr %#x.\n", hr);
  }
  
@@ -56,6 +56,26 @@ index aa8029c98d..2484e6d1b1 100644
 +        X(MF_READWRITE_MMCSS_CLASS_AUDIO),
 +        X(MF_READWRITE_MMCSS_PRIORITY_AUDIO),
 +        X(MF_READWRITE_D3D_OPTIONAL),
++
++        X(MF_SD_LANGUAGE),
++        X(MF_SD_MUTUALLY_EXCLUSIVE),
++        X(MF_SD_PROTECTED),
++        X(MF_SD_STREAM_NAME),
++        X(MF_SD_SAMI_LANGUAGE),
++
++        X(MF_PD_PMPHOST_CONTEXT),
++        X(MF_PD_APP_CONTEXT),
++        X(MF_PD_TOTAL_FILE_SIZE),
++        X(MF_PD_AUDIO_ENCODING_BITRATE),
++        X(MF_PD_VIDEO_ENCODING_BITRATE),
++        X(MF_PD_MIME_TYPE),
++        X(MF_PD_LAST_MODIFIED_TIME),
++        X(MF_PD_PLAYBACK_ELEMENT_ID),
++        X(MF_PD_PREFERRED_LANGUAGE),
++        X(MF_PD_PLAYBACK_BOUNDARY_TIME),
++        X(MF_PD_AUDIO_ISVARIABLEBITRATE),
++        X(MF_PD_ADAPTIVE_STREAMING),
++        X(MF_PD_SAMI_STYLELIST),
 +#undef X
 +    };
 +
