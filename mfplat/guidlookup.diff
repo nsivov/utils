@@ -1,8 +1,8 @@
 diff --git a/dlls/mfplat/tests/mfplat.c b/dlls/mfplat/tests/mfplat.c
-index a999b9bbe9..0bdf621417 100644
+index b66c54a374..45ca5ca778 100644
 --- a/dlls/mfplat/tests/mfplat.c
 +++ b/dlls/mfplat/tests/mfplat.c
-@@ -2042,12 +2042,96 @@ static void test_MFInvokeCallback(void)
+@@ -2344,12 +2344,100 @@ static void test_MFInvokeCallback(void)
      ok(hr == S_OK, "Failed to shut down, hr %#x.\n", hr);
  }
  
@@ -76,6 +76,10 @@ index a999b9bbe9..0bdf621417 100644
 +        X(MF_PD_AUDIO_ISVARIABLEBITRATE),
 +        X(MF_PD_ADAPTIVE_STREAMING),
 +        X(MF_PD_SAMI_STYLELIST),
++
++        X(MFSampleExtension_DecodeTimestamp),
++        X(MFSampleExtension_Timestamp),
++        X(MFSampleExtension_Token),
 +#undef X
 +    };
 +
