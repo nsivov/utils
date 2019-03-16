@@ -1,8 +1,8 @@
 diff --git a/dlls/mfplat/tests/mfplat.c b/dlls/mfplat/tests/mfplat.c
-index b66c54a374..45ca5ca778 100644
+index b66c54a374..1fb93aa51a 100644
 --- a/dlls/mfplat/tests/mfplat.c
 +++ b/dlls/mfplat/tests/mfplat.c
-@@ -2344,12 +2344,100 @@ static void test_MFInvokeCallback(void)
+@@ -2344,12 +2344,112 @@ static void test_MFInvokeCallback(void)
      ok(hr == S_OK, "Failed to shut down, hr %#x.\n", hr);
  }
  
@@ -80,6 +80,18 @@ index b66c54a374..45ca5ca778 100644
 +        X(MFSampleExtension_DecodeTimestamp),
 +        X(MFSampleExtension_Timestamp),
 +        X(MFSampleExtension_Token),
++
++        X(MF_SOURCE_READER_ASYNC_CALLBACK),
++        X(MF_SOURCE_READER_D3D_MANAGER),
++        X(MF_SOURCE_READER_D3D11_BIND_FLAGS),
++        X(MF_SOURCE_READER_DISABLE_CAMERA_PLUGINS),
++        X(MF_SOURCE_READER_DISABLE_DXVA),
++        X(MF_SOURCE_READER_DISCONNECT_MEDIASOURCE_ON_SHUTDOWN),
++        X(MF_SOURCE_READER_ENABLE_ADVANCED_VIDEO_PROCESSING),
++        X(MF_SOURCE_READER_ENABLE_TRANSCODE_ONLY_TRANSFORMS),
++        X(MF_SOURCE_READER_ENABLE_VIDEO_PROCESSING),
++        X(MF_SOURCE_READER_MEDIASOURCE_CHARACTERISTICS),
++        X(MF_SOURCE_READER_MEDIASOURCE_CONFIG),
 +#undef X
 +    };
 +
