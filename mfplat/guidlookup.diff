@@ -1,8 +1,8 @@
 diff --git a/dlls/mfplat/tests/mfplat.c b/dlls/mfplat/tests/mfplat.c
-index b66c54a374..1fb93aa51a 100644
+index b66c54a374..3187ed5c04 100644
 --- a/dlls/mfplat/tests/mfplat.c
 +++ b/dlls/mfplat/tests/mfplat.c
-@@ -2344,12 +2344,112 @@ static void test_MFInvokeCallback(void)
+@@ -2344,12 +2344,133 @@ static void test_MFInvokeCallback(void)
      ok(hr == S_OK, "Failed to shut down, hr %#x.\n", hr);
  }
  
@@ -92,6 +92,27 @@ index b66c54a374..1fb93aa51a 100644
 +        X(MF_SOURCE_READER_ENABLE_VIDEO_PROCESSING),
 +        X(MF_SOURCE_READER_MEDIASOURCE_CHARACTERISTICS),
 +        X(MF_SOURCE_READER_MEDIASOURCE_CONFIG),
++
++        X(MF_EVENT_DO_THINNING),
++        X(MF_EVENT_MFT_CONTEXT),
++        X(MF_EVENT_MFT_INPUT_STREAM_ID),
++        X(MF_EVENT_PRESENTATION_TIME_OFFSET),
++        X(MF_EVENT_SCRUBSAMPLE_TIME),
++        X(MF_EVENT_SESSIONCAPS),
++        X(MF_EVENT_SESSIONCAPS_DELTA),
++        X(MF_EVENT_SOURCE_ACTUAL_START),
++        X(MF_EVENT_SOURCE_CHARACTERISTICS),
++        X(MF_EVENT_SOURCE_CHARACTERISTICS_OLD),
++        X(MF_EVENT_SOURCE_FAKE_START),
++        X(MF_EVENT_SOURCE_PROJECTSTART),
++        X(MF_EVENT_SOURCE_TOPOLOGY_CANCELED),
++        X(MF_EVENT_START_PRESENTATION_TIME),
++        X(MF_EVENT_START_PRESENTATION_TIME_AT_OUTPUT),
++        X(MF_EVENT_STREAM_METADATA_CONTENT_KEYIDS),
++        X(MF_EVENT_STREAM_METADATA_KEYDATA),
++        X(MF_EVENT_STREAM_METADATA_SYSTEMID),
++        X(MF_EVENT_TOPOLOGY_STATUS),
++        X(MF_EVENT_OUTPUT_NODE),
 +#undef X
 +    };
 +
