@@ -1,9 +1,9 @@
 diff --git a/dlls/mfplat/tests/mfplat.c b/dlls/mfplat/tests/mfplat.c
-index b66c54a374..3187ed5c04 100644
+index d53251c318..48dca66820 100644
 --- a/dlls/mfplat/tests/mfplat.c
 +++ b/dlls/mfplat/tests/mfplat.c
-@@ -2344,12 +2344,133 @@ static void test_MFInvokeCallback(void)
-     ok(hr == S_OK, "Failed to shut down, hr %#x.\n", hr);
+@@ -2672,12 +2672,134 @@ static void test_wrapped_media_type(void)
+     IMFMediaType_Release(mediatype2);
  }
  
 +#include <stdio.h>
@@ -36,6 +36,7 @@ index b66c54a374..3187ed5c04 100644
 +        X(MF_MT_ALL_SAMPLES_INDEPENDENT),
 +        X(MF_MT_USER_DATA),
 +        X(MF_MT_FRAME_RATE_RANGE_MIN),
++        X(MF_MT_WRAPPED_TYPE),
 +
 +        X(MF_BYTESTREAM_ORIGIN_NAME),
 +        X(MF_BYTESTREAM_CONTENT_TYPE),
