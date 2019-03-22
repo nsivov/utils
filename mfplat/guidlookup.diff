@@ -1,8 +1,8 @@
 diff --git a/dlls/mfplat/tests/mfplat.c b/dlls/mfplat/tests/mfplat.c
-index d53251c318..48dca66820 100644
+index 6c6bfc16b6..fd41ce7a53 100644
 --- a/dlls/mfplat/tests/mfplat.c
 +++ b/dlls/mfplat/tests/mfplat.c
-@@ -2672,12 +2672,134 @@ static void test_wrapped_media_type(void)
+@@ -2755,12 +2755,175 @@ static void test_wrapped_media_type(void)
      IMFMediaType_Release(mediatype2);
  }
  
@@ -37,6 +37,42 @@ index d53251c318..48dca66820 100644
 +        X(MF_MT_USER_DATA),
 +        X(MF_MT_FRAME_RATE_RANGE_MIN),
 +        X(MF_MT_WRAPPED_TYPE),
++        X(MF_MT_FIXED_SIZE_SAMPLES),
++        X(MF_MT_COMPRESSED),
++        X(MF_MT_SAMPLE_SIZE),
++        X(MF_MT_VIDEO_3D),
++        X(MF_MT_VIDEO_3D_FORMAT),
++        X(MF_MT_VIDEO_3D_NUM_VIEWS),
++        X(MF_MT_VIDEO_3D_LEFT_IS_BASE),
++        X(MF_MT_VIDEO_3D_FIRST_IS_LEFT),
++        X(MF_MT_VIDEO_ROTATION),
++        X(MF_MT_VIDEO_RENDERER_EXTENSION_PROFILE),
++        X(MF_MT_VIDEO_NO_FRAME_ORDERING),
++        X(MF_MT_VIDEO_H264_NO_FMOASO),
++        X(MF_MT_SECURE),
++        X(MF_MT_ALPHA_MODE),
++        X(MF_MT_DEPTH_MEASUREMENT),
++        X(MF_MT_DEPTH_VALUE_UNIT),
++        X(MF_MT_FORWARD_CUSTOM_NALU),
++        X(MF_MT_FORWARD_CUSTOM_SEI),
++        X(MF_MT_AUDIO_NUM_CHANNELS),
++        X(MF_MT_AUDIO_SAMPLES_PER_SECOND),
++        X(MF_MT_AUDIO_FLOAT_SAMPLES_PER_SECOND),
++        X(MF_MT_AUDIO_AVG_BYTES_PER_SECOND),
++        X(MF_MT_AUDIO_BLOCK_ALIGNMENT),
++        X(MF_MT_AUDIO_BITS_PER_SAMPLE),
++        X(MF_MT_AUDIO_VALID_BITS_PER_SAMPLE),
++        X(MF_MT_AUDIO_SAMPLES_PER_BLOCK),
++        X(MF_MT_AUDIO_CHANNEL_MASK),
++        X(MF_MT_AUDIO_FOLDDOWN_MATRIX),
++        X(MF_MT_AUDIO_WMADRC_PEAKREF),
++        X(MF_MT_AUDIO_WMADRC_PEAKTARGET),
++        X(MF_MT_AUDIO_WMADRC_AVGREF),
++        X(MF_MT_AUDIO_WMADRC_AVGTARGET),
++        X(MF_MT_AUDIO_PREFER_WAVEFORMATEX),
++        X(MF_MT_AUDIO_FLAC_MAX_BLOCK_SIZE),
++        X(MF_MT_AAC_PAYLOAD_TIME),
++        X(MF_MT_AAC_AUDIO_PROFILE_LEVEL_INDICATION),
 +
 +        X(MF_BYTESTREAM_ORIGIN_NAME),
 +        X(MF_BYTESTREAM_CONTENT_TYPE),
@@ -81,6 +117,11 @@ index d53251c318..48dca66820 100644
 +        X(MFSampleExtension_DecodeTimestamp),
 +        X(MFSampleExtension_Timestamp),
 +        X(MFSampleExtension_Token),
++        X(MFSampleExtension_3DVideo),
++        X(MFSampleExtension_3DVideo_SampleFormat),
++        X(MFSampleExtension_TargetGlobalLuminance),
++        X(MFSampleExtension_ForwardedDecodeUnits),
++        X(MFSampleExtension_ForwardedDecodeUnitType),
 +
 +        X(MF_SOURCE_READER_ASYNC_CALLBACK),
 +        X(MF_SOURCE_READER_D3D_MANAGER),
