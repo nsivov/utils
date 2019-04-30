@@ -1,9 +1,9 @@
 diff --git a/dlls/mfplat/tests/mfplat.c b/dlls/mfplat/tests/mfplat.c
-index 6c6bfc16b6..47d0a89f50 100644
+index b349c51af3..5d13b09c67 100644
 --- a/dlls/mfplat/tests/mfplat.c
 +++ b/dlls/mfplat/tests/mfplat.c
-@@ -2755,12 +2755,305 @@ static void test_wrapped_media_type(void)
-     IMFMediaType_Release(mediatype2);
+@@ -2886,12 +2886,320 @@ static void test_MFCreateWaveFormatExFromMFMediaType(void)
+     IMFMediaType_Release(mediatype);
  }
  
 +#include <stdio.h>
@@ -143,6 +143,9 @@ index 6c6bfc16b6..47d0a89f50 100644
 +        X(MFMediaType_Stream),
 +        X(MFMediaType_Subtitle),
 +        X(MFMediaType_Video),
++
++        X(MF_DEVSOURCE_ATTRIBUTE_SOURCE_TYPE_AUDCAP_GUID),
++        X(MF_DEVSOURCE_ATTRIBUTE_SOURCE_TYPE_VIDCAP_GUID),
 +    };
 +    struct guid_def guid_defs[] =
 +    {
@@ -276,6 +279,18 @@ index 6c6bfc16b6..47d0a89f50 100644
 +        X(MF_EVENT_STREAM_METADATA_SYSTEMID),
 +        X(MF_EVENT_TOPOLOGY_STATUS),
 +        X(MF_EVENT_OUTPUT_NODE),
++
++        X(MF_DEVSOURCE_ATTRIBUTE_MEDIA_TYPE),
++        X(MF_DEVSOURCE_ATTRIBUTE_FRIENDLY_NAME),
++        X(MF_DEVSOURCE_ATTRIBUTE_SOURCE_TYPE),
++        X(MF_DEVSOURCE_ATTRIBUTE_SOURCE_TYPE_AUDCAP_SYMBOLIC_LINK),
++        X(MF_DEVSOURCE_ATTRIBUTE_SOURCE_TYPE_AUDCAP_ENDPOINT_ID),
++        X(MF_DEVSOURCE_ATTRIBUTE_SOURCE_TYPE_AUDCAP_ROLE),
++        X(MF_DEVSOURCE_ATTRIBUTE_SOURCE_TYPE_VIDCAP_CATEGORY),
++        X(MF_DEVSOURCE_ATTRIBUTE_SOURCE_TYPE_VIDCAP_HW_SOURCE),
++        X(MF_DEVSOURCE_ATTRIBUTE_SOURCE_TYPE_VIDCAP_PROVIDER_DEVICE_ID),
++        X(MF_DEVSOURCE_ATTRIBUTE_SOURCE_TYPE_VIDCAP_SYMBOLIC_LINK),
++        X(MF_DEVSOURCE_ATTRIBUTE_SOURCE_TYPE_VIDCAP_MAX_BUFFERS),
 +    };
 +#undef X
 +
