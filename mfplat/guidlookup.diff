@@ -1,8 +1,8 @@
 diff --git a/dlls/mfplat/tests/mfplat.c b/dlls/mfplat/tests/mfplat.c
-index 3afb3300a8..fdf96a64f4 100644
+index 295863716b..11aa443fd7 100644
 --- a/dlls/mfplat/tests/mfplat.c
 +++ b/dlls/mfplat/tests/mfplat.c
-@@ -3082,12 +3082,365 @@ static void test_async_create_file(void)
+@@ -3320,12 +3320,368 @@ static void test_async_create_file(void)
      ok(ret, "Failed to delete test file.\n");
  }
  
@@ -336,6 +336,9 @@ index 3afb3300a8..fdf96a64f4 100644
 +        X(MF_TOPOLOGY_RESOLUTION_STATUS),
 +        X(MF_TOPOLOGY_START_TIME_ON_PRESENTATION_SWITCH),
 +        X(MF_TOPOLOGY_STATIC_PLAYBACK_OPTIMIZATIONS),
++
++        X(MF_SAMPLEGRABBERSINK_SAMPLE_TIME_OFFSET),
++        X(MF_SAMPLEGRABBERSINK_IGNORE_CLOCK),
 +    };
 +#undef X
 +
