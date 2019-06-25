@@ -1,9 +1,9 @@
 diff --git a/dlls/mfplat/tests/mfplat.c b/dlls/mfplat/tests/mfplat.c
-index 295863716b..11aa443fd7 100644
+index e63efc154b..157a4c0e74 100644
 --- a/dlls/mfplat/tests/mfplat.c
 +++ b/dlls/mfplat/tests/mfplat.c
-@@ -3320,12 +3320,368 @@ static void test_async_create_file(void)
-     ok(ret, "Failed to delete test file.\n");
+@@ -3608,12 +3608,370 @@ static void test_local_handlers(void)
+     ok(hr == S_OK, "Failed to register stream handler, hr %#x.\n", hr);
  }
  
 +#include <stdio.h>
@@ -339,6 +339,8 @@ index 295863716b..11aa443fd7 100644
 +
 +        X(MF_SAMPLEGRABBERSINK_SAMPLE_TIME_OFFSET),
 +        X(MF_SAMPLEGRABBERSINK_IGNORE_CLOCK),
++
++        X(MF_LOW_LATENCY),
 +    };
 +#undef X
 +
