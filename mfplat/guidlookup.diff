@@ -1,9 +1,9 @@
 diff --git a/dlls/mfplat/tests/mfplat.c b/dlls/mfplat/tests/mfplat.c
-index e63efc154b..157a4c0e74 100644
+index 721ec120ef..fa2db14057 100644
 --- a/dlls/mfplat/tests/mfplat.c
 +++ b/dlls/mfplat/tests/mfplat.c
-@@ -3608,12 +3608,370 @@ static void test_local_handlers(void)
-     ok(hr == S_OK, "Failed to register stream handler, hr %#x.\n", hr);
+@@ -3788,12 +3788,380 @@ static void test_dxgi_device_manager(void)
+     IMFDXGIDeviceManager_Release(manager2);
  }
  
 +#include <stdio.h>
@@ -195,7 +195,7 @@ index e63efc154b..157a4c0e74 100644
 +        X(MF_MT_AUDIO_WMADRC_AVGTARGET),
 +        X(MF_MT_AUDIO_PREFER_WAVEFORMATEX),
 +        X(MF_MT_AUDIO_FLAC_MAX_BLOCK_SIZE),
-+        X(MF_MT_AAC_PAYLOAD_TIME),
++        X(MF_MT_AAC_PAYLOAD_TYPE),
 +        X(MF_MT_AAC_AUDIO_PROFILE_LEVEL_INDICATION),
 +
 +        X(MF_BYTESTREAM_ORIGIN_NAME),
@@ -340,6 +340,15 @@ index e63efc154b..157a4c0e74 100644
 +
 +        X(MF_SAMPLEGRABBERSINK_SAMPLE_TIME_OFFSET),
 +        X(MF_SAMPLEGRABBERSINK_IGNORE_CLOCK),
++
++        X(MF_SESSION_TOPOLOADER),
++        X(MF_SESSION_GLOBAL_TIME),
++        X(MF_SESSION_QUALITY_MANAGER),
++        X(MF_SESSION_CONTENT_PROTECTION_MANAGER),
++        X(MF_SESSION_SERVER_CONTEXT),
++        X(MF_SESSION_REMOTE_SOURCE_MODE),
++        X(MF_SESSION_APPROX_EVENT_OCCURRENCE_TIME),
++        X(MF_PMP_SERVER_CONTEXT),
 +
 +        X(MF_LOW_LATENCY),
 +    };
