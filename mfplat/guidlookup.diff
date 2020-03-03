@@ -1,9 +1,9 @@
 diff --git a/dlls/mfplat/tests/mfplat.c b/dlls/mfplat/tests/mfplat.c
-index 721ec120ef..fa2db14057 100644
+index 896cd93a46..1b06d9924d 100644
 --- a/dlls/mfplat/tests/mfplat.c
 +++ b/dlls/mfplat/tests/mfplat.c
-@@ -3788,12 +3788,380 @@ static void test_dxgi_device_manager(void)
-     IMFDXGIDeviceManager_Release(manager2);
+@@ -4230,6 +4230,405 @@ static void test_queue_com_state(const char *name)
+     ok(hr == S_OK, "Failed to shut down, hr %#x.\n", hr);
  }
  
 +#include <stdio.h>
@@ -351,6 +351,38 @@ index 721ec120ef..fa2db14057 100644
 +        X(MF_PMP_SERVER_CONTEXT),
 +
 +        X(MF_LOW_LATENCY),
++
++        X(MF_ACTIVATE_MFT_LOCKED),
++        X(MFT_ENUM_ADAPTER_LUID),
++        X(MFT_SUPPORT_DYNAMIC_FORMAT_CHANGE),
++        X(MF_SA_D3D_AWARE),
++        X(MF_TRANSFORM_ASYNC),
++        X(MF_TRANSFORM_ASYNC_UNLOCK),
++        X(MF_TRANSFORM_CATEGORY_Attribute),
++        X(MF_TRANSFORM_FLAGS_Attribute),
++        X(MFT_CODEC_MERIT_Attribute),
++        X(MFT_CONNECTED_STREAM_ATTRIBUTE),
++        X(MFT_CONNECTED_TO_HW_STREAM),
++        X(MFT_DECODER_EXPOSE_OUTPUT_TYPES_IN_NATIVE_ORDER),
++        X(MFT_DECODER_FINAL_VIDEO_RESOLUTION_HINT),
++        X(MFT_ENCODER_SUPPORTS_CONFIG_EVENT),
++        X(MFT_ENUM_HARDWARE_URL_Attribute),
++        X(MFT_ENUM_HARDWARE_VENDOR_ID_Attribute),
++        X(MFT_ENUM_TRANSCODE_ONLY_ATTRIBUTE),
++        X(MFT_FIELDOFUSE_UNLOCK_Attribute),
++        X(MFT_FRIENDLY_NAME_Attribute),
++        X(MFT_INPUT_TYPES_Attributes),
++        X(MFT_OUTPUT_TYPES_Attributes),
++        X(MFT_PREFERRED_ENCODER_PROFILE),
++        X(MFT_PREFERRED_OUTPUTTYPE_Attribute),
++        X(MFT_PROCESS_LOCAL_Attribute),
++        X(MFT_REMUX_MARK_I_PICTURE_AS_CLEAN_POINT),
++        X(MFT_SUPPORT_3DVIDEO),
++        X(MFT_TRANSFORM_CLSID_Attribute),
++        X(MFT_PROCESS_LOCAL_Attribute),
++        X(MFT_REMUX_MARK_I_PICTURE_AS_CLEAN_POINT),
++        X(MFT_SUPPORT_3DVIDEO),
++        X(MFT_TRANSFORM_CLSID_Attribute),
 +    };
 +#undef X
 +
@@ -375,9 +407,10 @@ index 721ec120ef..fa2db14057 100644
 +
  START_TEST(mfplat)
  {
-     CoInitialize(NULL);
+     char **argv;
+@@ -4246,6 +4645,7 @@ START_TEST(mfplat)
  
-     init_functions();
+     CoInitialize(NULL);
  
 +    test_guid_lookup();
      test_startup();
