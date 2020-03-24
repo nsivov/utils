@@ -1,9 +1,9 @@
 diff --git a/dlls/mfplat/tests/mfplat.c b/dlls/mfplat/tests/mfplat.c
-index 896cd93a46..1b06d9924d 100644
+index 497c451f72..c949e64d16 100644
 --- a/dlls/mfplat/tests/mfplat.c
 +++ b/dlls/mfplat/tests/mfplat.c
-@@ -4230,6 +4230,405 @@ static void test_queue_com_state(const char *name)
-     ok(hr == S_OK, "Failed to shut down, hr %#x.\n", hr);
+@@ -4987,6 +4987,446 @@ static void test_MFCreateMediaBufferFromMediaType(void)
+     IMFMediaType_Release(media_type);
  }
  
 +#include <stdio.h>
@@ -197,6 +197,45 @@ index 896cd93a46..1b06d9924d 100644
 +        X(MF_MT_AUDIO_FLAC_MAX_BLOCK_SIZE),
 +        X(MF_MT_AAC_PAYLOAD_TYPE),
 +        X(MF_MT_AAC_AUDIO_PROFILE_LEVEL_INDICATION),
++        X(MF_MT_ORIGINAL_4CC),
++        X(MF_MT_ORIGINAL_WAVE_FORMAT_TAG),
++        X(MF_MT_DEFAULT_STRIDE),
++        X(MF_MT_PALETTE),
++        X(MF_MT_VIDEO_LEVEL),
++        X(MF_MT_VIDEO_PROFILE),
++        X(MF_MT_MPEG_START_TIME_CODE),
++        X(MF_MT_MPEG2_PROFILE),
++        X(MF_MT_MPEG2_LEVEL),
++        X(MF_MT_MPEG2_FLAGS),
++        X(MF_MT_MPEG_SEQUENCE_HEADER),
++        X(MF_MT_MPEG2_STANDARD),
++        X(MF_MT_MPEG2_TIMECODE),
++        X(MF_MT_MPEG2_CONTENT_PACKET),
++        X(MF_MT_MPEG2_ONE_FRAME_PER_PACKET),
++        X(MF_MT_MPEG2_HDCP),
++        X(MF_MT_H264_MAX_CODEC_CONFIG_DELAY),
++        X(MF_MT_H264_SUPPORTED_SLICE_MODES),
++        X(MF_MT_H264_SUPPORTED_SYNC_FRAME_TYPES),
++        X(MF_MT_H264_RESOLUTION_SCALING),
++        X(MF_MT_H264_SIMULCAST_SUPPORT),
++        X(MF_MT_H264_SUPPORTED_RATE_CONTROL_MODES),
++        X(MF_MT_H264_MAX_MB_PER_SEC),
++        X(MF_MT_H264_SUPPORTED_USAGES),
++        X(MF_MT_H264_CAPABILITIES),
++        X(MF_MT_H264_SVC_CAPABILITIES),
++        X(MF_MT_H264_USAGE),
++        X(MF_MT_H264_RATE_CONTROL_MODES),
++        X(MF_MT_H264_LAYOUT_PER_STREAM),
++        X(MF_MT_IN_BAND_PARAMETER_SET),
++        X(MF_MT_MPEG4_TRACK_TYPE),
++        X(MF_MT_DV_AAUX_SRC_PACK_0),
++        X(MF_MT_DV_AAUX_CTRL_PACK_0),
++        X(MF_MT_DV_AAUX_SRC_PACK_1),
++        X(MF_MT_DV_AAUX_CTRL_PACK_1),
++        X(MF_MT_DV_VAUX_SRC_PACK),
++        X(MF_MT_DV_VAUX_CTRL_PACK),
++        X(MF_MT_ARBITRARY_HEADER),
++        X(MF_MT_ARBITRARY_FORMAT),
 +
 +        X(MF_BYTESTREAM_ORIGIN_NAME),
 +        X(MF_BYTESTREAM_CONTENT_TYPE),
@@ -351,6 +390,8 @@ index 896cd93a46..1b06d9924d 100644
 +        X(MF_PMP_SERVER_CONTEXT),
 +
 +        X(MF_LOW_LATENCY),
++        X(MF_VIDEO_MAX_MB_PER_SEC),
++        X(MF_DISABLE_FRAME_CORRUPTION_INFO),
 +
 +        X(MF_ACTIVATE_MFT_LOCKED),
 +        X(MFT_ENUM_ADAPTER_LUID),
@@ -408,7 +449,7 @@ index 896cd93a46..1b06d9924d 100644
  START_TEST(mfplat)
  {
      char **argv;
-@@ -4246,6 +4645,7 @@ START_TEST(mfplat)
+@@ -5003,6 +5443,7 @@ START_TEST(mfplat)
  
      CoInitialize(NULL);
  
