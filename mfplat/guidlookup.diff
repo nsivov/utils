@@ -1,9 +1,17 @@
 diff --git a/dlls/mfplat/tests/mfplat.c b/dlls/mfplat/tests/mfplat.c
-index 78d73b7580..efafc44389 100644
+index 8a52279a081..291150a79af 100644
 --- a/dlls/mfplat/tests/mfplat.c
 +++ b/dlls/mfplat/tests/mfplat.c
-@@ -5084,6 +5084,486 @@ static void test_MFCreateMediaBufferFromMediaType(void)
-     IMFMediaType_Release(media_type);
+@@ -32,6 +32,7 @@
+ #include "mfidl.h"
+ #include "mferror.h"
+ #include "mfreadwrite.h"
++#include "mfmediaengine.h"
+ #include "propvarutil.h"
+ #include "strsafe.h"
+ 
+@@ -5262,6 +5263,516 @@ static void test_MFInitMediaTypeFromWaveFormatEx(void)
+     IMFMediaType_Release(mediatype);
  }
  
 +#include <stdio.h>
@@ -464,6 +472,36 @@ index 78d73b7580..efafc44389 100644
 +        X(MFT_REMUX_MARK_I_PICTURE_AS_CLEAN_POINT),
 +        X(MFT_SUPPORT_3DVIDEO),
 +        X(MFT_TRANSFORM_CLSID_Attribute),
++
++        X(MF_MEDIA_ENGINE_AUDIO_CATEGORY),
++        X(MF_MEDIA_ENGINE_AUDIO_ENDPOINT_ROLE),
++        X(MF_MEDIA_ENGINE_BROWSER_COMPATIBILITY_MODE),
++        X(MF_MEDIA_ENGINE_BROWSER_COMPATIBILITY_MODE_IE9),
++        X(MF_MEDIA_ENGINE_BROWSER_COMPATIBILITY_MODE_IE10),
++        X(MF_MEDIA_ENGINE_BROWSER_COMPATIBILITY_MODE_IE11),
++        X(MF_MEDIA_ENGINE_BROWSER_COMPATIBILITY_MODE_IE_EDGE),
++        X(MF_MEDIA_ENGINE_CALLBACK),
++        X(MF_MEDIA_ENGINE_COMPATIBILITY_MODE),
++        X(MF_MEDIA_ENGINE_COMPATIBILITY_MODE_WIN10),
++        X(MF_MEDIA_ENGINE_COMPATIBILITY_MODE_WWA_EDGE),
++        X(MF_MEDIA_ENGINE_CONTENT_PROTECTION_FLAGS),
++        X(MF_MEDIA_ENGINE_CONTENT_PROTECTION_MANAGER),
++        X(MF_MEDIA_ENGINE_CONTINUE_ON_CODEC_ERROR),
++        X(MF_MEDIA_ENGINE_COREWINDOW),
++        X(MF_MEDIA_ENGINE_DXGI_MANAGER),
++        X(MF_MEDIA_ENGINE_EME_CALLBACK),
++        X(MF_MEDIA_ENGINE_EXTENSION),
++        X(MF_MEDIA_ENGINE_MEDIA_PLAYER_MODE),
++        X(MF_MEDIA_ENGINE_NEEDKEY_CALLBACK),
++        X(MF_MEDIA_ENGINE_OPM_HWND),
++        X(MF_MEDIA_ENGINE_PLAYBACK_HWND),
++        X(MF_MEDIA_ENGINE_PLAYBACK_VISUAL),
++        X(MF_MEDIA_ENGINE_SOURCE_RESOLVER_CONFIG_STORE),
++        X(MF_MEDIA_ENGINE_STREAM_CONTAINS_ALPHA_CHANNEL),
++        X(MF_MEDIA_ENGINE_SYNCHRONOUS_CLOSE),
++        X(MF_MEDIA_ENGINE_TELEMETRY_APPLICATION_ID),
++        X(MF_MEDIA_ENGINE_TRACK_ID),
++        X(MF_MEDIA_ENGINE_VIDEO_OUTPUT_FORMAT),
 +    };
 +#undef X
 +
@@ -489,7 +527,7 @@ index 78d73b7580..efafc44389 100644
  START_TEST(mfplat)
  {
      char **argv;
-@@ -5100,6 +5580,7 @@ START_TEST(mfplat)
+@@ -5278,6 +5789,7 @@ START_TEST(mfplat)
  
      CoInitialize(NULL);
  
